@@ -1,0 +1,26 @@
+﻿<table border="1">
+    <thead>
+        <tr>
+            <th>Employee Name</th>
+            <th>Total worked hours</th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (ViewBag.Employees != null)
+        {
+            foreach (var employee in ViewBag.Employees)
+            {
+                <tr style="@(employee.Value < 100 ? "background-color: #FFCCCC;" : "")">
+                    <td>@employee.Key</td>
+                    <td>@employee.Value</td>
+                </tr>
+            }
+        }
+        else
+        {
+            <tr>
+                <td colspan="2">No employees found</td>
+            </tr>
+        }
+    </tbody>
+</table>
